@@ -7,10 +7,14 @@ const bugzilla = require('./lib/bugzilla');
 
 const DATA_PATH = path.join(__dirname, 'ui', 'DATA.json');
 
-const mentorshipStats = bugzilla.getMentorshipStats();
+process();
 
-const data = {
-  mentorship: mentorshipStats,
-};
+async function process() {
+  const mentorshipStats = await bugzilla.getMentorshipStats();
 
-fs.writeFileSync(DATA_PATH, JSON.stringify(data));
+  const data = {
+    mentorship: mentorshipStats,
+  };
+
+  fs.writeFileSync(DATA_PATH, JSON.stringify(data));
+}

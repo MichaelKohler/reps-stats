@@ -25,7 +25,8 @@
   "homepage": "https://github.com/MichaelKohler/reps-stats#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "lodash.groupby": "^4.6.0"
   },
   "devDependencies": {
     "@michaelkohler/eslint-config-node": "^6.8.16",
