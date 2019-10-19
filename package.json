@@ -1,0 +1,35 @@
+{
+  "name": "reps-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=reps-stats:* node index.js",
+    "install": "npm ci && cd ui && npm ci && cd ..",
+    "eslint": "eslint index.js lib/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "cd voting && npm run build && sed -i '' 's#=/favicon#=favicon#g' dist/index.html && sed -i '' 's#=/js#=js#g' dist/index.html && sed -i '' 's#=/css#=css#g' dist/index.html && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MichaelKohler/reps-stats.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "author": "Michael Kohler <me@michaelkohler.info>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/MichaelKohler/reps-stats/issues"
+  },
+  "homepage": "https://github.com/MichaelKohler/reps-stats#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "@michaelkohler/eslint-config-node": "^6.8.16",
+    "eslint": "^6.5.1",
+    "gh-pages": "^2.1.1"
+  }
+}
