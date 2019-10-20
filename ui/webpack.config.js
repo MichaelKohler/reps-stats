@@ -9,6 +9,9 @@ const copyOptions = [{
 }, {
   from: 'index.html',
   to: '.',
+}, {
+  from: 'favicon.svg',
+  to: '.',
 }];
 
 function getDevTool() {
