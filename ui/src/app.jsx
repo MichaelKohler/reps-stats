@@ -22,6 +22,7 @@ import data from './DATA.json';
 
 import Overview from './overview.jsx';
 import Onboarding from './onboarding.jsx';
+import Portal from './portal.jsx';
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -147,6 +148,7 @@ export default function App() {
                   <Switch>
                       <Route exact path="/" component={ Overview }/>
                       <Route exact path="/onboarding" component={ () => <Onboarding mentorship={ data.mentorship }/> }/>
+                      <Route exact path="/portal" component={ () => <Portal portal={ data.portal }/> }/>
                       <Redirect to="/"/>
                   </Switch>
               </main>
