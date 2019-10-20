@@ -29,12 +29,12 @@ module.exports = {
   devtool: getDevTool(),
   module: {
     rules: [{
-      test: /\.js|\.jsx$/,
+      test: /\.js$|\.jsx$/,
       exclude: /node_modules/,
       enforce: 'pre',
       loader: 'eslint-loader'
     }, {
-      test: /\.js|\.jsx$/,
+      test: /\.js$|\.jsx$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
     }],

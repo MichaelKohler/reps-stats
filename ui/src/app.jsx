@@ -18,7 +18,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Sidebar from './sidebar.jsx';
 
+import data from './DATA.json';
+
 import Overview from './overview.jsx';
+import Onboarding from './onboarding.jsx';
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -143,6 +146,7 @@ export default function App() {
               <main className={ classes.content }>
                   <Switch>
                       <Route exact path="/" component={ Overview }/>
+                      <Route exact path="/onboarding" component={ () => <Onboarding mentorship={ data.mentorship }/> }/>
                       <Redirect to="/"/>
                   </Switch>
               </main>

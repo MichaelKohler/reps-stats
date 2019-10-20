@@ -22,11 +22,18 @@ export function Sidebar() {
               <ListItemText primary="Dashboard"/>
           </ListItem>
 
-          <ListItem button component={ AdapterLink } to="/bugzilla">
+          <ListItem button component={ AdapterLink } to="/onboarding">
               <ListItemIcon>
                   <BugReportIcon/>
               </ListItemIcon>
-              <ListItemText primary="Bugzilla"/>
+              <ListItemText primary="Onboarding"/>
+          </ListItem>
+
+          <ListItem button component={ AdapterLink } to="/portal">
+              <ListItemIcon>
+                  <BugReportIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Portal"/>
           </ListItem>
       </List>
   );
