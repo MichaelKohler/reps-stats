@@ -35,6 +35,20 @@ export function Sidebar() {
               </ListItemIcon>
               <ListItemText primary="Portal"/>
           </ListItem>
+
+          <ListItem button component={ AdapterLink } to="/budget">
+              <ListItemIcon>
+                  <BugReportIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Budget Requests"/>
+          </ListItem>
+
+          <ListItem button component={ AdapterLink } to="/swag">
+              <ListItemIcon>
+                  <BugReportIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Swag Requests"/>
+          </ListItem>
       </List>
   );
 }

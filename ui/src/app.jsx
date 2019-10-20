@@ -21,8 +21,7 @@ import Sidebar from './sidebar.jsx';
 import data from './DATA.json';
 
 import Overview from './overview.jsx';
-import Onboarding from './onboarding.jsx';
-import Portal from './portal.jsx';
+import Bugs from './bugs.jsx';
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -147,8 +146,10 @@ export default function App() {
               <main className={ classes.content }>
                   <Switch>
                       <Route exact path="/" component={ Overview }/>
-                      <Route exact path="/onboarding" component={ () => <Onboarding mentorship={ data.mentorship }/> }/>
-                      <Route exact path="/portal" component={ () => <Portal portal={ data.portal }/> }/>
+                      <Route exact path="/onboarding" component={ () => <Bugs data={ data.mentorship } title="Onboarding (Reps Applications)"/> }/>
+                      <Route exact path="/portal" component={ () => <Bugs data={ data.portal } title="Portal (reps.mozilla.org)"/> }/>
+                      <Route exact path="/budget" component={ () => <Bugs data={ data.budget } title="Budget Requests"/> }/>
+                      <Route exact path="/swag" component={ () => <Bugs data={ data.swag } title="Swag Requests"/> }/>
                       <Redirect to="/"/>
                   </Switch>
               </main>
