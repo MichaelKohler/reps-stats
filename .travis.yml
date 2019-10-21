@@ -10,7 +10,7 @@ install:
 - cd ui && npm install
 
 script:
-- cd ui && npm run build
+- npm run build
 
 notifications:
   email:
