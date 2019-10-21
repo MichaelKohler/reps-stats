@@ -7,10 +7,10 @@ branches:
   - /^greenkeeper/.*$/
 
 install:
-- npm install
+- cd ui && npm install
 
 script:
-- npm run build
+- cd ui && npm run build
 
 notifications:
   email:
