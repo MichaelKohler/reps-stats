@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import {
-  BarChart, CartesianGrid, Bar, XAxis, YAxis, Tooltip,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  ReferenceLine,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from 'recharts';
 
 export function BugChartVertical(props) {
@@ -35,6 +41,10 @@ export function BugChartVertical(props) {
                   <Bar dataKey="DUPLICATE" stackId="a" fill="#ffbb99"/>
                   <Bar dataKey="INCOMPLETE" stackId="a" fill="#ff1a75"/>
                   <Bar dataKey="OPEN" stackId="a" fill="#007acc"/>
+                  <ReferenceLine y="2013-07" stroke="#0099CC" label="Firefox OS Launch"/>
+                  <ReferenceLine y="2015-12" stroke="#0099CC" label="Firefox OS - Pivot to Connected Devices"/>
+                  <ReferenceLine y="2017-05" stroke="#0099CC" label="Onboarding Team created"/>
+                  <ReferenceLine y="2017-10" stroke="#0099CC" label="Resources Team created"/>
               </BarChart>
           ) }
       </Grid>
