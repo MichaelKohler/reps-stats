@@ -2,8 +2,7 @@
   "groups": {
     "default": {
       "packages": [
-        "package.json",
-        "server/package.json"
+        "package.json"
       ]
     }
   }
