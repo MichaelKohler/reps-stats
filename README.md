@@ -1,5 +1,7 @@
 # Reps Statistics
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MichaelKohler/reps-stats.svg)](https://greenkeeper.io/)
+
 ## Run it
 
 ```bash
