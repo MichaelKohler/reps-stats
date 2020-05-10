@@ -27,5 +27,4 @@ async function process() {
   } catch (error) {
     debug(error);
   }
-
 }
