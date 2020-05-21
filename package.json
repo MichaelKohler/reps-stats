@@ -24,7 +24,7 @@
   "homepage": "https://github.com/MichaelKohler/reps-stats#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "debug": "^4.1.1",
+    "debug": "^4.2.0",
     "lodash.groupby": "^4.6.0"
   },
   "devDependencies": {
