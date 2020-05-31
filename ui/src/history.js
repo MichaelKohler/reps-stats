@@ -1,3 +1,5 @@
+/* globals process */
+
 import { createHashHistory, createMemoryHistory } from 'history';
 
 let history = createMemoryHistory();

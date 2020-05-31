@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=reps-stats:* node index.js",
-    "eslint": "eslint index.js lib/**/*.js",
+    "eslint": "eslint lib/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "cd ui && npm run build && gh-pages -d dist && cd .."
   },
@@ -29,8 +29,8 @@
   },
   "devDependencies": {
     "@michaelkohler/eslint-config-node": "^6.8.22",
-    "eslint": "^7.0.0",
-    "gh-pages": "^2.2.0",
+    "eslint": "^7.1.0",
+    "gh-pages": "^3.0.0",
     "json-loader": "^0.5.7"
   }
 }

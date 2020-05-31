@@ -3,16 +3,18 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const copyOptions = [{
-  from: 'robots.txt',
-  to: '.',
-}, {
-  from: 'index.html',
-  to: '.',
-}, {
-  from: 'favicon.svg',
-  to: '.',
-}];
+const copyOptions = {
+  patterns: [{
+    from: 'robots.txt',
+    to: '.',
+  }, {
+    from: 'index.html',
+    to: '.',
+  }, {
+    from: 'favicon.svg',
+    to: '.',
+  }],
+};
 
 function getDevTool() {
   if (process.env.NODE_ENV !== 'production') {
@@ -43,6 +45,6 @@ module.exports = {
     }],
   },
   plugins: [
-    new CopyWebpackPlugin(copyOptions, { copyUnmodified: true }),
+    new CopyWebpackPlugin(copyOptions),
   ],
 };
