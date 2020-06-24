@@ -18,9 +18,11 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Sidebar from './sidebar.jsx';
 
 import data from './DATA.json';
+import activityData from './DATA-activity.json';
 
 import Overview from './overview.jsx';
 import Bugs from './bugs.jsx';
+import Activity from './activity.jsx';
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -149,6 +151,7 @@ export default function App() {
                       <Route exact path="/portal" component={ () => <Bugs data={ data.portal } title="Portal (reps.mozilla.org)"/> }/>
                       <Route exact path="/budget" component={ () => <Bugs data={ data.budget } title="Budget Requests"/> }/>
                       <Route exact path="/swag" component={ () => <Bugs data={ data.swag } title="Swag Requests"/> }/>
+                      <Route exact path="/activity" component={ () => <Activity data={ activityData } title="Activity"/> }/>
                       <Redirect to="/"/>
                   </Switch>
               </main>

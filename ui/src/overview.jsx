@@ -17,12 +17,12 @@ export default function Overview() {
   return (
       <section>
           <div className={ classes.appBarSpacer }/>
-          <Container maxWidth="lg" className={ classes.container }>
+          <Container maxWidth="xl" className={ classes.container }>
               <Grid container spacing={ 3 }>
                   <Grid item xs={ 12 } md={ 12 } lg={ 12 }>
                       <h1>Different Mozilla Reps statistics</h1>
                       <p>This only shows the status as it is, there are no assumptions done about any quality.</p>
-                      <p>Please choose your report in the sidebar. The reports are not being generated automatically for now.</p>
+                      <p>Please choose your report in the sidebar.</p>
                   </Grid>
               </Grid>
           </Container>

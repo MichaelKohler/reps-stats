@@ -6,6 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import BugReportIcon from '@material-ui/icons/BugReport';
+import DataUsageIcon from '@material-ui/icons/DataUsage';
 
 // The usage of React.forwardRef will no longer be required for react-router-dom v6.
 // see https://github.com/ReactTraining/react-router/issues/6056
@@ -48,6 +49,13 @@ export function Sidebar() {
                   <BugReportIcon/>
               </ListItemIcon>
               <ListItemText primary="Swag Requests"/>
+          </ListItem>
+
+          <ListItem button component={ AdapterLink } to="/activity">
+              <ListItemIcon>
+                  <DataUsageIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Activity"/>
           </ListItem>
       </List>
   );
