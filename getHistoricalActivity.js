@@ -9,7 +9,8 @@ const debug = require('debug')('reps-stats:historic');
 const MINIMUM_DATE = new Date(2012, 5, 1);
 
 const { ARCHIVE_PATH } = process.env;
-const DATA_PATH = path.join(__dirname, 'ui', 'src', 'DATA-activity.json');
+const ACTIVITIES_DATA_PATH = path.join(__dirname, 'ui', 'src', 'DATA-activity.json');
+const TENURE_DATA_PATH = path.join(__dirname, 'ui', 'src', 'DATA-tenure.json');
 
 if (!ARCHIVE_PATH) {
   console.error('ARCHIVE_PATH is required and needs to point to valid checkout of reps-archive, aborting.');
@@ -46,13 +47,18 @@ async function processData() {
 
     const now = new Date();
     const stats = [];
+    const tenureStats = [];
     for (let currentDate = now; currentDate >= MINIMUM_DATE; currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() - 7)) {
-      const periodStats = getStatsForDate(enhancedReps, currentDate);
+      const periodStats = getActivityStatsForDate(enhancedReps, currentDate);
       stats.push(periodStats);
+
+      const tenurePeriodStats = getTenureStatsForDate(enhancedReps, currentDate);
+      tenureStats.push(tenurePeriodStats);
     }
 
-    await fs.writeFile(DATA_PATH, JSON.stringify(stats));
-    debug(`File written to ${DATA_PATH}`);
+    await fs.writeFile(ACTIVITIES_DATA_PATH, JSON.stringify(stats));
+    await fs.writeFile(TENURE_DATA_PATH, JSON.stringify(tenureStats));
+    debug(`Files written to ${ACTIVITIES_DATA_PATH}`);
   } catch (error) {
     debug(error);
   }
@@ -79,7 +85,7 @@ function getRepsInfo(reps, activities) {
   return enhancedReps;
 }
 
-function getStatsForDate(reps, date) {
+function getActivityStatsForDate(reps, date) {
   const repsInProgram = reps.filter((rep) => {
     const hadLeftProgram = rep.dateLeft ? rep.dateLeft <= date : false;
     return rep.dateJoined <= date && !hadLeftProgram;
@@ -110,6 +116,29 @@ function getStatsForDate(reps, date) {
     week: `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`,
     totalReps: repsInProgram.length,
     ...bucketStats,
+  };
+}
+
+function getTenureStatsForDate(reps, date) {
+  const repsInProgram = reps.filter((rep) => {
+    const hadLeftProgram = rep.dateLeft ? rep.dateLeft <= date : false;
+    return rep.dateJoined <= date && !hadLeftProgram;
+  });
+
+  const tenureStats = {};
+  repsInProgram.forEach((rep) => {
+    const joinedYear = rep.dateJoined.getFullYear();
+
+    if (!tenureStats[joinedYear]) {
+      tenureStats[joinedYear] = 0;
+    }
+
+    tenureStats[joinedYear] = tenureStats[joinedYear] + 1;
+  });
+
+  return {
+    week: `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`,
+    ...tenureStats,
   };
 }
 

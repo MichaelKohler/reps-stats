@@ -57,6 +57,13 @@ export function Sidebar() {
               </ListItemIcon>
               <ListItemText primary="Activity"/>
           </ListItem>
+
+          <ListItem button component={ AdapterLink } to="/tenure">
+              <ListItemIcon>
+                  <DataUsageIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Tenure"/>
+          </ListItem>
       </List>
   );
 }
