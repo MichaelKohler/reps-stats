@@ -13,7 +13,6 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "recharts": "^1.8.5",
-    "snyk": "^1.339.1",
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
@@ -37,9 +36,7 @@
   },
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js --mode production",
-    "start": "webpack-dev-server --hot --progress --colors --inline --mode development",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "start": "webpack-dev-server --hot --progress --colors --inline --mode development"
   },
   "author": "Michael Kohler",
   "license": "MPL-2.0",
@@ -50,6 +47,5 @@
     "not ie_mob <= 11",
     "not op_mini all",
     "not dead"
-  ],
-  "snyk": true
+  ]
 }
