@@ -16,7 +16,7 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
+    "@babel/core": "^7.10.4",
     "@babel/preset-react": "^7.10.1",
     "@michaelkohler/eslint-config-react": "^6.8.22",
     "babel-eslint": "^10.1.0",
