@@ -24,6 +24,7 @@ export default function Tenure(props) {
               <Grid container spacing={ 3 }>
                   <Grid item xs={ 12 } md={ 12 } lg={ 12 }>
                       <h1>{ props.title }</h1>
+                      <p>Note that this is not updated regularly. The last update was done when moving to the Community Portal.</p>
                       <TenureChart data={ props.data }/>
                   </Grid>
               </Grid>

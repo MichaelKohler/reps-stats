@@ -24,7 +24,7 @@ export default function Bugs(props) {
               <Grid container spacing={ 3 }>
                   <Grid item xs={ 12 } md={ 12 } lg={ 12 }>
                       <h1>{ props.title }</h1>
-                      <p>This shows the Reps Activity per week over time. Note that this is not updated regularly. Once we move to the Community Portal, I will refresh this again. And after that we probably will not be able to fetch that data.</p>
+                      <p>This shows the Reps Activity per week over time. Note that this is not updated regularly. The last update was done when moving to the Community Portal.</p>
                       <ul>
                           <li>Core: activity report within the last 4 weeks</li>
                           <li>Regular: activity report within the last 12 weeks</li>
