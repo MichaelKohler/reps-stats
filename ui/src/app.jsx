@@ -150,7 +150,6 @@ export default function App() {
                   <Switch>
                       <Route exact path="/" component={ Overview }/>
                       <Route exact path="/onboarding" component={ () => <Bugs data={ data.mentorship } title="Onboarding (Reps Applications)"/> }/>
-                      <Route exact path="/portal" component={ () => <Bugs data={ data.portal } title="Portal (reps.mozilla.org)"/> }/>
                       <Route exact path="/budget" component={ () => <Bugs data={ data.budget } title="Budget Requests"/> }/>
                       <Route exact path="/swag" component={ () => <Bugs data={ data.swag } title="Swag Requests"/> }/>
                       <Route exact path="/activity" component={ () => <Activity data={ activityData } title="Activity"/> }/>

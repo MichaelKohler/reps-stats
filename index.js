@@ -12,13 +12,11 @@ process();
 async function process() {
   try {
     const mentorshipStats = await bugzilla.getMentorshipStats();
-    const portalStats = await bugzilla.getPortalStats();
     const budgetStats = await bugzilla.getBudgetStats();
     const swagStats = await bugzilla.getSwagStats();
 
     const data = {
       mentorship: mentorshipStats,
-      portal: portalStats,
       budget: budgetStats,
       swag: swagStats,
     };

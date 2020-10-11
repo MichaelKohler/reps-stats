@@ -30,13 +30,6 @@ export function Sidebar() {
               <ListItemText primary="Onboarding"/>
           </ListItem>
 
-          <ListItem button component={ AdapterLink } to="/portal">
-              <ListItemIcon>
-                  <BugReportIcon/>
-              </ListItemIcon>
-              <ListItemText primary="Portal"/>
-          </ListItem>
-
           <ListItem button component={ AdapterLink } to="/budget">
               <ListItemIcon>
                   <BugReportIcon/>
