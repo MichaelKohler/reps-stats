@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/MichaelKohler/reps-stats#readme",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "debug": "^4.3.1",
     "lodash.groupby": "^4.6.0"
   },
